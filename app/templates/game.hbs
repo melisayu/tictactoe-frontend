@@ -1,0 +1,15 @@
+<section class="flex-center">
+  <div class="player-cards-container">
+    <Player
+      @mark={{"X"}}
+      @playerName={{this.firstPlayer}}
+      @color={{"red"}}
+    />
+    <Player
+      @mark={{"O"}}
+      @playerName={{this.secondPlayer}}
+      @color={{"green"}}
+    />
+  </div>
+  <Board />
+</section>

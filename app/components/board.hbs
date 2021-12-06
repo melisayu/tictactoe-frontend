@@ -1,0 +1,29 @@
+<div class="flex-center">
+  <div data-test-id="result" class="game-result">
+    {{this.gameResult}}
+  </div>
+  <div class="board">
+    {{#each this.board as |row|}}
+      {{#each row as |tile|}}
+        <div
+          data-test-id="tile-{{tile.coords.[0]}}{{tile.coords.[1]}}"
+          class="tile flex-center"
+          role="button"
+          key={{tile.coords}}
+          {{on "click" (fn this.selectTile tile.coords)}}
+        >
+          <p class={{tile.color}}>{{tile.value}}</p>
+        </div>
+      {{/each}}
+    {{/each}}
+  </div>
+  <button
+    data-test-id="reset"
+    class="button"
+    type="button"
+    {{on "click" this.resetGame}}
+  >
+    Reset
+  </button>
+</div>
+  
